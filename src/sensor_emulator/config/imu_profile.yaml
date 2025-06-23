@@ -1,0 +1,4 @@
+imu:
+  update_rate: 10  # Hz
+  motion_type: "rotation"  # or "stationary"
+  add_noise: true
