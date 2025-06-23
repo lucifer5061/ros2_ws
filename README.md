@@ -1,14 +1,29 @@
 # ROS 2 Anti-Drone System
 
-This repository contains a ROS 2-based sensor emulator for an autonomous anti-drone system. 
+This project is a ROS 2-based sensor emulator for simulating IMU data as part of a larger anti-drone system.
 
-## 📦 Features
-- Simulated GPS, IMU, and detection sensor publishers
-- Configurable motion profiles
-- Milestone-based development structure
+---
 
-## 🚀 Milestones
-- **Milestone 1:** IMU publisher + Config system
-- **Milestone 2:** GPS path publisher
-- **Milestone 3:** Sensor fusion logic
-- **Milestone 4:** Detection cue & logging
+## 📦 Package: `sensor_emulator`
+
+This node publishes simulated IMU messages to `/imu/data`.
+
+### 🔁 Behavior:
+- Publishes data at 10 Hz
+- Simulates yaw rotation (Z-axis)
+- Constant angular velocity and gravity vector
+
+---
+
+## 🚀 Setup Instructions
+
+### 1. Clone and build
+
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/lucifer5061/ros2_ws.git
+cd ~/ros2_ws
+rosdep install --from-paths src --ignore-src -r -y
+colcon build
+source install/setup.bash
+
