@@ -1,0 +1,14 @@
+motion:
+  type: "hover"     # linear, zigzag, circle and hover. if there is no type selected then it will automatically select "hover" as default
+  speed: 1.0         # m/s for linear/zigzag
+  period: 4.0        # s for zigzag
+  radius: 5.0        # m for circle
+  omega: 0.5         # rad/s for circle
+  drift_amp: 0.5     # m for hover
+imu:
+  rate: 10.0         # Hz publish rate
+gps:
+  base_lat: 24.8607  # degrees
+  base_lon: 67.0011  # degrees
+  base_alt: 50.0     # meters
+
