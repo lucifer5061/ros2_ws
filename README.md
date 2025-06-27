@@ -56,5 +56,5 @@ source install/setup.bash
 
 - 👨‍💻 Author
   - Syed Ahmed Zulfiqar
-  - 3rd Year Electronics Engineering Student – NED University
+  - Final Year Electronics Engineering Student – NED University
   - GitHub: @lucifer5061
