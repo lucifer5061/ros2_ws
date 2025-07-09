@@ -10,8 +10,8 @@ from launch_ros.actions import Node
 def generate_launch_description():
     pkg_share = get_package_share_directory('sensor_emulator')
 
-    # Allow user to override motion type and config file
     ld = LaunchDescription([
+        # Allow user to override motion type
         DeclareLaunchArgument(
             'motion',
             default_value='linear',
@@ -19,19 +19,35 @@ def generate_launch_description():
         )
     ])
 
-    # Node that runs your sensor_emulator_node
+    # 1) Sensor emulator (IMU, GPS, /track/fake_target)
     emulator_node = Node(
         package='sensor_emulator',
         executable='sensor_emulator_node',
         name='sensor_emulator_node',
         parameters=[{
-            # you can set the motion type here; the node reads it from YAML,
-            # but you could override via params if you extend your code.
             'motion_type': LaunchConfiguration('motion')
         }],
         output='screen',
     )
-
     ld.add_action(emulator_node)
+
+    # 2) Test input publisher (mock visual & RF cues)
+    test_pub_node = Node(
+        package='sensor_emulator',
+        executable='test_input_pub',
+        name='test_input_pub',
+        output='screen',
+    )
+    ld.add_action(test_pub_node)
+
+    # 3) Cue fusion node (publishes /synthetic_target_cue)
+    fusion_node = Node(
+        package='sensor_emulator',
+        executable='cue_fusion_node',
+        name='cue_fusion_node',
+        output='screen',
+    )
+    ld.add_action(fusion_node)
+
     return ld
 
