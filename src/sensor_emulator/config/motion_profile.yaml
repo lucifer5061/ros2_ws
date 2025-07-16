@@ -5,10 +5,15 @@ motion:
   radius: 5.0        # m for circle
   omega: 0.5         # rad/s for circle
   drift_amp: 0.5     # m for hover
+  input:
+    mode: replay         # replay or synthetic
+    file_path: data/sample_cues.json
 imu:
   rate: 10.0         # Hz publish rate
 gps:
-  base_lat: 24.8607  # degrees
+  base_lat: 24.8607  # degrees    
   base_lon: 67.0011  # degrees
   base_alt: 50.0     # meters
+
+
 

@@ -1,0 +1,17 @@
+[
+  { "type": "visual", "t": 0.00, "x": 0.00, "y": 0.00, "class_id": 1, "confidence": 0.95 },
+  { "type": "rf",     "t": 0.02, "x": 0.02, "y": 0.01, "rssi":       0.85 },
+  
+  { "type": "visual", "t": 0.10, "x": 0.10, "y": 0.00, "class_id": 1, "confidence": 0.93 },
+  { "type": "rf",     "t": 0.12, "x": 0.12, "y": -0.01,"rssi":       0.80 },
+  
+  { "type": "visual", "t": 0.20, "x": 0.20, "y": 0.00, "class_id": 0, "confidence": 0.40 },
+  { "type": "rf",     "t": 0.22, "x": 0.22, "y": 0.02, "rssi":       0.78 },
+  
+  { "type": "visual", "t": 0.30, "x": 0.30, "y": 0.00, "class_id": 1, "confidence": 0.90 },
+  { "type": "rf",     "t": 0.32, "x": 0.32, "y": -0.02,"rssi":       0.82 },
+  
+  { "type": "visual", "t": 0.40, "x": 0.40, "y": 0.00, "class_id": 1, "confidence": 0.92 },
+  { "type": "rf",     "t": 0.42, "x": 0.42, "y": 0.01, "rssi":       0.30 }
+]
+

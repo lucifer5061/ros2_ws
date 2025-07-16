@@ -4,11 +4,12 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, ExecuteProcess
 from launch_ros.actions import Node
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('sensor_emulator')
+    plot_script_path = os.path.join(pkg_share, 'scripts', 'plot_fused_detections.py')
 
     ld = LaunchDescription([
         # Allow user to override motion type
@@ -48,6 +49,13 @@ def generate_launch_description():
         output='screen',
     )
     ld.add_action(fusion_node)
+
+    # 4) Plotting script (plot_fused_detections.py)
+    plot_script = ExecuteProcess(
+        cmd=['python3', plot_script_path],
+        output='screen'
+    )
+    ld.add_action(plot_script)
 
     return ld
 
