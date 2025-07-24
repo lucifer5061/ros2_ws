@@ -1,6 +1,6 @@
-# 📡 Sensor Emulator – ROS 2 Package for Autonomous Anti-Drone System
+# ROS 2 Sensor Emulator and Cue Fusion System
 
-The `sensor_emulator` package provides a simulated multi-sensor data stream for developing and testing autonomous anti-drone systems in a ROS 2 environment. It includes synthetic GPS, IMU, RF, and visual detection data, enabling the development of perception and fusion pipelines without requiring physical hardware.
+This repository contains a custom ROS 2-based sensor emulator and cue fusion system developed to simulate and test multi-sensor perception for an autonomous drone or robotic surveillance system. The system is designed in two major milestones, offering modular sensor emulation, configurable motion profiles, and real-time latency measurement with visual feedback.
 
 ---
 
@@ -90,9 +90,15 @@ ros2 launch sensor_emulator sensor_emulator_launch.py
   - ✅ CSV-based logging of fused target detections
   - ✅ Configurable motion logic in YAML
 
+## 🎯 Milestone 2 – Deliverables
+  - ✅ Real-time latency measurement between input cues and output fused detections
+  - ✅ Automatic logging of fusion output and latency to `detections.csv`
+  - ✅ Visualization of fused target positions (X-Y plane) via `plot_fused_detections.py`
+  - ✅ Fully integrated launch system to run the complete simulation
   
 
 ## 👨‍💻 Author
   - Syed Ahmed Zulfiqar
   - Final Year Electronics Engineering Student – NED University
+  - syedahmed.zulfiqar@gmail.com
   - GitHub: @lucifer5061
